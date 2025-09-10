@@ -50,7 +50,7 @@
         }
     </script>
     <style>
-        .hero-bg {
+        /*.hero-bg {
             background: linear-gradient(rgba(29, 71, 67, 0.8), rgba(16, 49, 35, 0.8)), 
                         url('https://static.vecteezy.com/system/resources/previews/052/822/449/non_2x/colorful-salad-with-edible-flowers-on-a-dark-background-showcasing-vibrant-culinary-art-free-photo.jpeg');
             background-size: cover;
@@ -58,11 +58,30 @@
             background-attachment: fixed;
         }
 
-        /* Disable fixed background on mobile */
+         Disable fixed background on mobile 
         @media (max-width: 768px) {
             .hero-bg {
                 background-attachment: scroll;
-            }
+            }*/
+        /* 🔹 Hero background with parallax on desktop only */
+        .hero-bg {
+        /* Background image + gradient overlay */
+        background: linear-gradient(
+                    rgba(29, 71, 67, 0.8),
+                    rgba(16, 49, 35, 0.8)
+                    ),
+                    url('https://static.vecteezy.com/system/resources/previews/052/822/449/non_2x/colorful-salad-with-edible-flowers-on-a-dark-background-showcasing-vibrant-culinary-art-free-photo.jpeg');
+
+        background-size: cover;       /* cover whole area */
+        background-position: center;  /* keep it centered */
+        background-attachment: fixed; /* enable parallax effect */
+        }
+
+        /* 🔹 iPhone/iPad fix (disable parallax on smaller screens) */
+        @media (max-width: 1024px) {
+        .hero-bg {
+            background-attachment: scroll; /* fallback to normal */
+        }
         }
         .product-slider {
             position: relative;
