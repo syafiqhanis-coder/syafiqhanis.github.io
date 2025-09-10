@@ -57,6 +57,13 @@
             background-position: center;
             background-attachment: fixed;
         }
+
+        /* Disable fixed background on mobile */
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-attachment: scroll;
+            }
+        }
         .product-slider {
             position: relative;
             overflow: hidden;
