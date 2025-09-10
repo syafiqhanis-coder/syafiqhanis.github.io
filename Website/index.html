@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foliage Enterprise | Premium Malaysian Microgreens & Edible Flowers</title>
+    <meta name="description" content="Malaysia's premier supplier of premium Microgreens and Edible lowers. Trusted by top hotels and restaurants since 2017.">
+    <meta name="keywords" content="microgreens, edible flowers, Malaysia, premium, culinary botanicals, sustainable farming">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1D4743",
+                        secondary: "#103123",
+                        accent: "#C6E1D0",
+                        beige: "#F5F5DC",
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(29, 71, 67, 0.8), rgba(16, 49, 35, 0.8)), 
+                        url('https://www.thespruce.com/thmb/Pq4RWRxeX6WrLZNmiQtMqPum9BA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/EdibleFlowers01-b82a8ce14add4b1fa7815c45bf90a4e7.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .product-slider {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+        }
+        .product-slides {
+            display: flex;
+            transition: transform 0.5s ease;
+            height: 100%;
+        }
+        .product-slide {
+            min-width: 100%;
+            height: 100%;
+        }
+        .product-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .slide-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.7);
+            border: none;
+            padding: 8px 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+        .slide-btn:hover {
+            background: rgba(255,255,255,0.9);
+        }
+        .prev-btn {
+            left: 10px;
+        }
+        .next-btn {
+            right: 10px;
+        }
+        .client-logo {
+            height: 130px;
+            width: 100%;
+            object-fit: contain;
+            padding: 1rem;
+            /*filter: grayscale(100%) brightness(0) invert(1);
+            transition: filter 0.0s ease;
+        }
+        .client-logo:hover {
+            filter: grayscale(0) brightness(1) invert(0);*/
+        }
+    </style>
+</head>
+<body class="font-sans bg-white text-primary min-h-screen flex flex-col">
+    <!-- Sticky Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-heading font-bold animate-fade-in">Foliage</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-accent transition-colors duration-300">Home</a>
+                <a href="#about" class="hover:text-accent transition-colors duration-300">About</a>
+                <a href="#products" class="hover:text-accent transition-colors duration-300">Products</a>
+                <a href="#benefits" class="hover:text-accent transition-colors duration-300">Benefits</a>
+                <a href="#clients" class="hover:text-accent transition-colors duration-300">Clients</a>
+                <a href="#contact" class="hover:text-accent transition-colors duration-300">Contact</a>
+            </div>
+            <button class="md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section with Animated Background -->
+        <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white px-6">
+            <div class="container mx-auto text-center animate-slide-up">
+                <h1 class="font-heading text-4xl md:text-6xl font-bold mb-6 animate-float">Culinary Botanicals, Redefined</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Premium Microgreens and Edible Flowers for Malaysia's finest culinary establishments</p>
+                <a href="#products" class="bg-accent text-primary px-8 py-3 rounded-full font-medium hover:bg-white transition-colors duration-300 inline-block">Explore Our Products</a>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="py-20 bg-beige">
+            <div class="container mx-auto px-6">
+                <h2 class="font-heading text-3xl text-center mb-12">Our Premium Offerings</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg hover:shadow-lg transition-shadow duration-300">
+                        <div class="product-slider relative mb-4 rounded-lg overflow-hidden">
+                            <div class="product-slides">
+                                <div class="product-slide">
+                                    <img src="https://img.freepik.com/free-photo/growing-plants-egg-box-creative-way-grow-plants_185193-108676.jpg" alt="Microgreens assortment" loading="lazy">
+                                </div>
+                                <div class="product-slide">
+                                    <img src="https://img.freepik.com/free-photo/germination-microgreens-germination-seeds-home_169016-34852.jpg" alt="Microgreens close-up" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="slide-btn prev-btn" onclick="prevSlide(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                                </svg>
+                            </button>
+                            <button class="slide-btn next-btn" onclick="nextSlide(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
+                        <h3 class="font-heading text-xl mb-2">Microgreens</h3>
+                        <p class="text-secondary">20+ varieties of nutrient-packed Microgreens for culinary excellence</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg hover:shadow-lg transition-shadow duration-300">
+                        <div class="product-slider relative mb-4 rounded-lg overflow-hidden">
+                            <div class="product-slides">
+                                <div class="product-slide">
+                                    <img src="https://ucanr.edu/sites/default/files/styles/page_banner/public/2025-08/edible-flowers-Cath-Carter.jpg.webp?itok=MEsIiJAF" alt="Edible flowers" loading="eager">
+                                </div>
+                                <div class="product-slide">
+                                    <img src="https://nayagreens.com/wp-content/uploads/2022/05/Edible-Flowers.jpg" alt="Edible flowers arrangement" loading="eager">
+                                </div>
+                            </div>
+                            <button class="slide-btn prev-btn" onclick="prevSlide(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                                </svg>
+                            </button>
+                            <button class="slide-btn next-btn" onclick="nextSlide(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
+                        <h3 class="font-heading text-xl mb-2">Edible Flowers</h3>
+                        <p class="text-secondary">10+ exquisite Edible Flowers to elevate your dishes</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg hover:shadow-lg transition-shadow duration-300">
+                        <div class="product-slider relative mb-4 rounded-lg overflow-hidden">
+                            <div class="product-slides">
+                                <div class="product-slide">
+                                    <img src="https://www.freshbox.com.au/cdn/shop/products/butternut-squash-165550222-582776ee3df78c6f6a38f162.jpg?v=1629979391&width=1214" alt="Butternut pumpkin" loading="lazy">
+                                </div>
+                                <div class="product-slide">
+                                    <img src="https://www.gingerwithspice.com/wp-content/uploads/2019/10/Butternut-and-Pumpkin-Puree-2.jpg" alt="Butternut pumpkin dish" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="slide-btn prev-btn" onclick="prevSlide(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                                </svg>
+                            </button>
+                            <button class="slide-btn next-btn" onclick="nextSlide(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
+                        <h3 class="font-heading text-xl mb-2">Butternut Pumpkin</h3>
+                        <p class="text-secondary">Premium quality Pumpkin for diverse culinary applications</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="font-heading text-3xl mb-6">About Foliage Enterprise</h2>
+                        <p class="mb-4">Established in 2017, Foliage Enterprise has grown to become Malaysia's premier supplier of Premium Microgreens and Edible Flowers.</p>
+                        <p class="mb-6">Trusted by over 600 culinary outlets nationwide, we're redefining botanical living through sustainable farming practices.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent mr-2 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <p>Freshness guaranteed with daily harvests</p>
+                            </div>
+                            <div class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent mr-2 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <p>Global expansion with premium sustainable produce</p>
+                            </div>
+                            <div class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent mr-2 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <p>Strategic partnerships with top culinary establishments</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <img src="https://img.freepik.com/free-photo/greenhouse-owner-presenting-flowers-options-potential-customer-retailer_158595-6984.jpg" alt="Foliage Enterprise farm" class="w-full rounded-lg shadow-lg" loading="lazy">
+                        <div class="absolute -bottom-6 -right-6 bg-primary text-white p-4 rounded-lg shadow-lg">
+                            <p class="font-bold text-xl">600+</p>
+                            <p>Trusted Outlets</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Meet Our Team Section -->
+                <div class="mt-20">
+                    <h2 class="font-heading text-3xl text-center mb-12">Meet Our Team</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8">
+                        <div class="team-card bg-beige p-6 rounded-lg text-center">
+                            <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-accent">
+                                <img src="https://firstclasse.com.my/wp-content/uploads/2022/07/Inspire_Syed-Saddiq_03.jpg" alt="CEO" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="font-heading text-xl mb-1">Mohamad Fairuz</h3>
+                            <p class="text-sm font-medium text-primary mb-2">Founder</p>
+                            <p class="text-sm">15+ years in agricultural business development and sustainable farming</p>
+                        </div>
+                        <div class="team-card bg-beige p-6 rounded-lg text-center">
+                            <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-accent">
+                                <img src="https://www.corporatephotographylondon.com/wp-content/uploads/2017/06/approachable-professional-headshot_1.jpg" alt="Head of Operations" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="font-heading text-xl mb-1">Abdul Harith</h3>
+                            <p class="text-sm font-medium text-primary mb-2">Co Founder</p>
+                            <p class="text-sm">Expert in farm management and quality control with 10+ years experience</p>
+                        </div>
+                        <div class="team-card bg-beige p-6 rounded-lg text-center">
+                            <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-accent">
+                                <img src="https://thumbs.dreamstime.com/b/ken-block-american-professional-rally-driver-red-bull-grc-san-pedro-ca-september-global-rallycross-265583733.jpg" alt="Head Grower" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="font-heading text-xl mb-1">Mohamad Faisal</h3>
+                            <p class="text-sm font-medium text-primary mb-2">Co Founder</p>
+                            <p class="text-sm">Podium Champion</p>
+                        </div>
+                        <div class="team-card bg-beige p-6 rounded-lg text-center">
+                            <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-accent">
+                                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Head Grower" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="font-heading text-xl mb-1">Bristi Khatun</h3>
+                            <p class="text-sm font-medium text-primary mb-2">R&D Director</p>
+                            <p class="text-sm">PhD in Horticulture with specialization in microgreens cultivation</p>
+                        </div>
+                        <div class="team-card bg-beige p-6 rounded-lg text-center">
+                            <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-accent">
+                                <img src="https://images.unsplash.com/photo-1562788869-4ed32648eb72?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Sales Director" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="font-heading text-xl mb-1">Idris Hoppie</h3>
+                            <p class="text-sm font-medium text-primary mb-2">R&D Director</p>
+                            <p class="text-sm">8+ years in B2B sales with focus on hospitality industry</p>
+                        </div>
+                        <div class="team-card bg-beige p-6 rounded-lg text-center">
+                            <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-accent">
+                                <img src="https://www.pmo.gov.my/wp-content/uploads/2022/11/ANWAR-THUMNAIL.png" alt="Sustainability Officer" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="font-heading text-xl mb-1">Anwar Ibrahim</h3>
+                            <p class="text-sm font-medium text-primary mb-2">Madanon Leader</p>
+                            <p class="text-sm">Leads our eco-farming initiatives and organic certification processes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Products Section -->
+        <section id="products" class="py-20 bg-beige">
+            <div class="container mx-auto px-6">
+                <h2 class="font-heading text-3xl text-center mb-6">Our Products</h2>
+                <p class="text-center mb-12 max-w-2xl mx-auto">Premium quality Microgreens and Edible Flowers for culinary professionals</p>
+                
+                <div class="flex justify-center mb-8">
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <button class="filter-btn px-4 py-2 rounded-full bg-primary text-white" data-filter="all">All</button>
+                        <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300" data-filter="microgreens">Microgreens</button>
+                        <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300" data-filter="flowers">Edible Flowers</button>
+                        <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300" data-filter="pumpkin">Butternut Pumpkin</button>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="product-grid">
+                    <!-- Products will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section id="benefits" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="font-heading text-3xl text-center mb-12">Why Choose Foliage</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-beige p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-heading text-xl mb-2">Premium Quality</h3>
+                        <p>Hand-selected, nutrient-rich botanicals grown under optimal conditions</p>
+                    </div>
+                    <div class="bg-beige p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-heading text-xl mb-2">Sustainable Farming</h3>
+                        <p>Eco-friendly cultivation methods that respect the environment</p>
+                    </div>
+                    <div class="bg-beige p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                            </svg>
+                        </div>
+                        <h3 class="font-heading text-xl mb-2">Versatile Use</h3>
+                        <p>Perfect for garnishing, flavoring, and enhancing any culinary creation</p>
+                    </div>
+                    <div class="bg-beige p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-heading text-xl mb-2">Reliable Supply</h3>
+                        <p>Consistent year-round availability for your business needs</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clients Section -->
+        <section id="clients" class="py-20 bg-primary text-white">
+            <div class="container mx-auto px-6">
+                <h2 class="font-heading text-3xl text-center mb-12">Trusted By Malaysia's Finest</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <div class="bg-white bg-opacity-10 p-6 rounded-lg flex items-center justify-center h-32 backdrop-blur-sm">
+                        <img src="https://kualalumpur.mandarinorientalshop.com/cdn/shop/files/MANDARIN_ORIENTAL_LOGO_GOLD_MOKUL_2222x.png?v=1750745034" alt="Mandarin Oriental" class="client-logo">
+                    </div>
+                    <div class="bg-white bg-opacity-10 p-6 rounded-lg flex items-center justify-center h-32 backdrop-blur-sm">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/e/e9/Four_Seasons_Kuala_Lumpur_logo.png" alt="Four Seasons" class="client-logo">
+                    </div>
+                    <div class="bg-white bg-opacity-10 p-6 rounded-lg flex items-center justify-center h-32 backdrop-blur-sm">
+                        <img src="https://ucarecdn.com/c3839463-f742-494d-8cb3-170e729fa66f/" alt="St. Regis" class="client-logo">
+                    </div>
+                    <div class="bg-white bg-opacity-10 p-6 rounded-lg flex items-center justify-center h-32 backdrop-blur-sm">
+                        <img src="https://www.cathaypacific.com/content/dam/focal-point/cx/am-partner/holidays/hotel/grand-hyatt-photos/grand-hyatt-logo.originalimage.png" alt="Grand Hyatt" class="client-logo">
+                    </div>
+                    <div class="bg-white bg-opacity-10 p-6 rounded-lg flex items-center justify-center h-32 backdrop-blur-sm">
+                        <img src="https://klairport.info/ap-content/uploads/malaysia-airlines.png" alt="Malaysia Airlines" class="client-logo">
+                    </div>
+                    <div class="bg-white bg-opacity-10 p-6 rounded-lg flex items-center justify-center h-32 backdrop-blur-sm">
+                        <img src="https://fuegodining.com/wp-content/uploads/logo-fuego.png" alt="Fuego Troika Sky Dining" class="client-logo">
+                    </div>
+                    <div class="bg-white bg-opacity-10 p-6 rounded-lg flex items-center justify-center h-32 backdrop-blur-sm">
+                        <img src="https://www.theolivetreegroup.com/wp-content/uploads/2024/09/luca-new-logo.png" alt="Luca" class="client-logo">
+                    </div>
+                    <div class="bg-white bg-opacity-10 p-6 rounded-lg flex items-center justify-center h-32 backdrop-blur-sm">
+                        <img src="https://logos-world.net/wp-content/uploads/2021/02/Hilton-Logo.png" alt="Hilton" class="client-logo">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievement Feed Section -->
+        <section class="py-12 bg-accent">
+            <div class="container mx-auto px-6">
+                <h2 class="font-heading text-3xl text-center mb-8">Achievements and Awards</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
+                    <img src="https://thumbs.dreamstime.com/b/man-check-million-dollars-pop-art-raster-winning-lottery-pinup-retro-hand-drawn-illustration-comic-book-style-imitation-305382175.jpg" alt="Menang Besar" class="w-full aspect-square object-cover" loading="lazy">
+                    <img src="https://thumbs.dreamstime.com/b/man-check-million-dollars-pop-art-raster-winning-lottery-pinup-retro-hand-drawn-illustration-comic-book-style-imitation-305382175.jpg" alt="Menang Besar" class="w-full aspect-square object-cover" loading="lazy">
+                    <img src="https://thumbs.dreamstime.com/b/man-check-million-dollars-pop-art-raster-winning-lottery-pinup-retro-hand-drawn-illustration-comic-book-style-imitation-305382175.jpg" alt="Menang Besar" class="w-full aspect-square object-cover" loading="lazy">
+                    <img src="https://thumbs.dreamstime.com/b/man-check-million-dollars-pop-art-raster-winning-lottery-pinup-retro-hand-drawn-illustration-comic-book-style-imitation-305382175.jpg" alt="Menang Besar" class="w-full aspect-square object-cover" loading="lazy">
+                    <img src="https://thumbs.dreamstime.com/b/man-check-million-dollars-pop-art-raster-winning-lottery-pinup-retro-hand-drawn-illustration-comic-book-style-imitation-305382175.jpg" alt="Menang Besar" class="w-full aspect-square object-cover" loading="lazy">
+                    <img src="https://thumbs.dreamstime.com/b/man-check-million-dollars-pop-art-raster-winning-lottery-pinup-retro-hand-drawn-illustration-comic-book-style-imitation-305382175.jpg" alt="Menang Besar" class="w-full aspect-square object-cover" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-beige">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="font-heading text-3xl mb-6">Get In Touch</h2>
+                        <p class="mb-8">We'd love to hear from you. Whether you're interested in our products, have questions about our farming practices, or want to discuss a partnership, our team is ready to assist you.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-accent p-3 rounded-full mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-heading text-lg mb-1">Address</h3>
+                                    <p>Lot 7146,Jalan Melati 2,Sungai Kantan,43000,Kajang,Selangor,Malaysia</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-accent p-3 rounded-full mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-heading text-lg mb-1">Phone</h3>
+                                    <p>+60 13-614 5891 (Main)</p>
+                                    <p>+60 13-976 3009 (WhatsApp)</p>
+                                    <p>+60 11-2146 0368 (WhatsApp)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-accent p-3 rounded-full mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-heading text-lg mb-1">Email</h3>
+                                    <p>foliage.my@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h3 class="font-heading text-xl mb-4">Follow Us</h3>
+                            <div class="flex space-x-4">
+                                <a href="https://www.instagram.com/foliage.my/?hl=en" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    class="bg-primary text-white p-3 rounded-full hover:bg-secondary transition-colors duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                                    </svg>
+                                </a>
+                                <!-- <a href="#" class="bg-primary text-white p-3 rounded-full hover:bg-secondary transition-colors duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                                    </svg>
+                                </a>
+                                <a href="#" class="bg-primary text-white p-3 rounded-full hover:bg-secondary transition-colors duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                                    </svg>
+                                </a>-->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="font-heading text-2xl mb-6">Send Us a Message</h3>
+                        <form id="contactForm" method="POST" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium mb-1">Full Name</label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium mb-1">Email Address</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="subject" class="block text-sm font-medium mb-1">Subject</label>
+                                <input type="text" id="subject" name="subject" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium mb-1">Message</label>
+                                <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                            </div>
+                            <button type="submit" class="bg-primary text-white px-6 py-3 rounded-md hover:bg-secondary transition-colors duration-300 w-full">Send Message</button>
+                        </form>
+                        <script>
+                        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+                            e.preventDefault();
+
+                            const form = e.target;
+                            const formData = new FormData(form);
+
+                            try {
+                                const response = await fetch("https://formspree.io/f/meolvvel", {
+                                    method: "POST",
+                                    body: formData,
+                                    headers: { "Accept": "application/json" }
+                                 });
+
+                            if (response.ok) {
+                                alert('Thank you for your message! We will get back to you soon.');
+                                form.reset();
+                            } else {
+                                alert('Oops! Something went wrong. Please try again.');
+                            }
+                        } catch (error) {
+                            alert('Network error. Please try again later.');
+                        } 
+                    });
+                    </script>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-heading text-xl mb-4">Foliage Enterprise</h3>
+                    <p>Malaysia's premier supplier of premium microgreens and edible flowers since 2017.</p>
+                </div>
+                <div>
+                    <h3 class="font-heading text-xl mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-accent transition-colors duration-300">Home</a></li>
+                        <li><a href="#about" class="hover:text-accent transition-colors duration-300">About Us</a></li>
+                        <li><a href="#products" class="hover:text-accent transition-colors duration-300">Products</a></li>
+                        <li><a href="#contact" class="hover:text-accent transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-heading text-xl mb-4">Products</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#products" class="hover:text-accent transition-colors duration-300">Microgreens</a></li>
+                        <li><a href="#products" class="hover:text-accent transition-colors duration-300">Edible Flowers</a></li>
+                        <li><a href="#products" class="hover:text-accent transition-colors duration-300">Butternut Pumpkin</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-heading text-xl mb-4">Contact Info</h3>
+                    <address class="not-italic">
+                        <p>Lot 7146,Jalan Melati 2,Sungai Kantan</p>
+                        <p>43000 Kajang, Selangor, Malaysia</p>
+                        <p>+60 13-614 5891 (Main)</p>
+                        <p>+60 13-976 3009 (WhatsApp)</p>
+                        <p>+60 11-2146 0368 (WhatsApp)</p>
+                        <p>foliage.my@gmail.com</p>
+                    </address>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p>&copy; 2023 Foliage Enterprise. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Initialize ScrollReveal
+        ScrollReveal().reveal('.animate-fade-in', { 
+            delay: 200,
+            duration: 1000,
+            easing: 'ease-in-out'
+        });
+        
+        ScrollReveal().reveal('.animate-slide-up', { 
+            delay: 300,
+            duration: 800,
+            distance: '20px',
+            origin: 'bottom',
+            easing: 'ease-out'
+        });
+
+        // Fixed Product Slider Functionality
+        function nextSlide(button) {
+            const slider = button.parentElement;
+            const slides = slider.querySelector('.product-slides');
+            const slideWidth = slider.querySelector('.product-slide').offsetWidth;
+            const currentTransform = slides.style.transform;
+            const currentPosition = currentTransform ? parseInt(currentTransform.replace('translateX(', '').replace('px)', '')) : 0;
+            
+            // If we're at the last slide, reset to first without animation
+            if (Math.abs(currentPosition) >= slideWidth * (slides.children.length - 1)) {
+                slides.style.transition = 'none';
+                slides.style.transform = 'translateX(0)';
+                setTimeout(() => {
+                    slides.style.transition = 'transform 0.5s ease';
+                }, 10);
+            } else {
+                slides.style.transform = `translateX(${currentPosition - slideWidth}px)`;
+            }
+        }
+
+        function prevSlide(button) {
+            const slider = button.parentElement;
+            const slides = slider.querySelector('.product-slides');
+            const slideWidth = slider.querySelector('.product-slide').offsetWidth;
+            const currentTransform = slides.style.transform;
+            const currentPosition = currentTransform ? parseInt(currentTransform.replace('translateX(', '').replace('px)', '')) : 0;
+            
+            // If we're at the first slide, jump to last without animation
+            if (currentPosition >= 0) {
+                slides.style.transition = 'none';
+                slides.style.transform = `translateX(-${slideWidth * (slides.children.length - 1)}px)`;
+                setTimeout(() => {
+                    slides.style.transition = 'transform 0.5s ease';
+                }, 10);
+            } else {
+                slides.style.transform = `translateX(${currentPosition + slideWidth}px)`;
+            }
+        }
+
+        // Product filtering
+        const products = [
+            {
+                id: 1,
+                name: "Afilla",
+                category: "microgreens",
+                description: "Nutrient-rich with a mild nutty flavor, perfect for salads and garnishes.",
+                images: [
+                    "https://mpseeds.eu/userdata/public/gfx/975/Pea-Afylla-Shoots-in-a-pot.jpg",
+                    "https://mpseeds.eu/userdata/public/gfx/977/Pea-Foxy-Affyla-Microgreens.jpg"
+                ]
+            },
+            {
+                id: 2,
+                name: "Amarant Red",
+                category: "microgreens",
+                description: "Sweet and crisp, excellent for stir-fries and fresh salads.",
+                images: [
+                    "https://mpseeds.eu/userdata/public/gfx/618/Amaranth-Red.jpg",
+                    "https://mpseeds.eu/userdata/public/gfx/616/Amaranth-Red-microgreens.jpg"
+                ]
+            },
+            {
+                id: 3,
+                name: "Basil Italian",
+                category: "microgreens",
+                description: "Spicy kick that adds flavor to sandwiches and soups.",
+                images: [
+                    "https://mpseeds.eu/userdata/public/gfx/964/Basil-Green-Italian-Microgreens.jpg",
+                    "https://rootedlocally.com/wp-content/uploads/2022/07/Italian-Basil.jpg"
+                ]
+            },
+            {
+                id: 4,
+                name: "Beets Blood",
+                category: "flowers",
+                description: "Peppery flavor with vibrant colors, great for salads and desserts.",
+                images: [
+                    "https://premierseeds.b-cdn.net/wp-content/uploads/2024/06/Beetroot-Bulls-Blood-scaled.jpeg",
+                    "https://homemicrogreens.com/wp-content/uploads/2019/02/growing-beet-microgreens-close-up-view.jpg"
+                ]
+            },
+            {
+                id: 5,
+                name: "Cilantro Coriander",
+                category: "flowers",
+                description: "Mild wintergreen flavor with beautiful colors for plating.",
+                images: [
+                    "https://mpseeds.eu/userdata/public/gfx/1158/Cillantro-CorianderMicrogreens-9529.jpg",
+                    "https://mpseeds.eu/userdata/public/gfx/1159/Cilantro-Microgreens-9568.jpg"
+                ]
+            },
+            {
+                id: 6,
+                name: "Dianthus",
+                category: "flowers",
+                description: "Mild wintergreen flavor with beautiful colors for plating.",
+                images: [
+                    "https://4leafflowers.com/wp-content/uploads/2022/11/Dianthus-pink.jpeg",
+                    "https://4leafflowers.com/wp-content/uploads/2022/11/07b6199578220e180406e0d5fa714da5.jpg"
+                ]
+            },
+            {
+                id: 7,
+                name: "French Marigold",
+                category: "flowers",
+                description: "Mild wintergreen flavor with beautiful colors for plating.",
+                images: [
+                    "https://www.livingseeds.co.za/image/cache/catalog/Marigolds_New-600x600.JPG",
+                    "https://4leafflowers.com/wp-content/uploads/2022/04/01821_01_durangooutback.jpg"
+                ]
+            },
+            {
+                id: 8,
+                name: "Butternut Pumpkin",
+                category: "pumpkin",
+                description: "Sweet, nutty flavor perfect for soups, roasts and purees.",
+                images: [
+                    "https://www.shutterstock.com/image-photo/butternut-squash-isolated-on-white-600nw-1404923990.jpg",
+                    "https://www.theseasonalhomestead.com/wp-content/uploads/2024/09/Butternut-squash-1024x683.jpg"
+                ]
+            }
+        ];
+
+        function renderProducts(filter = 'all') {
+            const productGrid = document.getElementById('product-grid');
+            productGrid.innerHTML = '';
+            
+            const filteredProducts = filter === 'all' 
+                ? products 
+                : products.filter(product => product.category === filter);
+            
+            filteredProducts.forEach(product => {
+                const productElement = document.createElement('div');
+                productElement.className = 'bg-white p-6 rounded-lg hover:shadow-lg transition-shadow duration-300';
+                productElement.innerHTML = `
+                    <div class="product-slider relative mb-4 rounded-lg overflow-hidden h-48">
+                        <div class="product-slides">
+                            ${product.images.map(img => `
+                                <div class="product-slide">
+                                    <img src="${img}" alt="${product.name}" class="w-full h-full object-cover" loading="lazy">
+                                </div>
+                            `).join('')}
+                        </div>
+                        <button class="slide-btn prev-btn" onclick="prevSlide(this)">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                        <button class="slide-btn next-btn" onclick="nextSlide(this)">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
+                    <h3 class="font-heading text-xl mb-2">${product.name}</h3>
+                    <p class="text-secondary">${product.description}</p>
+                `;
+                productGrid.appendChild(productElement);
+            });
+        }
+
+        // Initialize product grid
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+            
+            // Filter buttons
+            document.querySelectorAll('.filter-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    document.querySelectorAll('.filter-btn').forEach(btn => {
+                        btn.classList.remove('bg-primary', 'text-white');
+                        btn.classList.add('bg-gray-200');
+                    });
+                    button.classList.add('bg-primary', 'text-white');
+                    button.classList.remove('bg-gray-200');
+                    renderProducts(button.dataset.filter);
+                });
+            });
+            
+            // Contact form submission
+            document.getElementById('contactForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you soon.');
+                e.target.reset();
+            });
+        });
+    </script>
+</body>
+</html>
