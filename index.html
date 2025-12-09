@@ -149,8 +149,8 @@
         <!-- Hero Section with Animated Background -->
         <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white px-6">
             <div class="container mx-auto text-center animate-slide-up">
-                <h1 class="font-heading text-4xl md:text-6xl font-bold mb-6 animate-float">Culinary Botanicals, Redefined</h1>
-                <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Premium Microgreens and Edible Flowers for Finest Culinary Establishments</p>
+                <h1 class="font-heading text-4xl md:text-6xl font-bold mb-6 animate-float">Grown With Purpose</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Premium Microgreens, Edible Flowers & Fresh Produce for the Finest Gastronomy</p>
                 <a href="#products" class="bg-accent text-primary px-8 py-3 rounded-full font-medium hover:bg-white transition-colors duration-300 inline-block">Explore Our Products</a>
             </div>
         </section>
@@ -215,7 +215,10 @@
                                     <img src="https://images.pexels.com/photos/33887608/pexels-photo-33887608.jpeg" alt="Butternut pumpkin" loading="lazy">
                                 </div>
                                 <div class="product-slide">
-                                    <img src="https://images.pexels.com/photos/33887610/pexels-photo-33887610.jpeg" alt="Butternut pumpkin dish" loading="lazy">
+                                    <img src="https://iili.io/fAseFob.png" alt="White Corn" loading="lazy">
+                                </div>
+                                <div class="product-slide">
+                                    <img src="https://iili.io/fAs4fcJ.png" alt="Fujisawa Melon" loading="lazy">
                                 </div>
                             </div>
                             <button class="slide-btn prev-btn" onclick="prevSlide(this)">
@@ -229,8 +232,8 @@
                                 </svg>
                             </button>
                         </div>
-                        <h3 class="font-heading text-xl mb-2">Butternut Pumpkin</h3>
-                        <p class="text-secondary">Premium quality Pumpkin for diverse culinary applications</p>
+                        <h3 class="font-heading text-xl mb-2">Farm Produced</h3>
+                        <p class="text-secondary">Premium quality Butternut Pumpkin, Hokkaido White Sweet Corn, & Fujisawa Melon for diverse culinary applications</p>
                     </div>
                 </div>
             </div>
@@ -317,7 +320,7 @@
                                 <img src="https://iili.io/f9DH2KN.png" alt="Head Grower" class="w-full h-full object-cover">
                             </div>
                             <h3 class="font-heading text-xl mb-1">Bristi Khatun</h3>
-                            <p class="text-sm font-medium text-primary mb-2">R&D Director</p>
+                            <p class="text-sm font-medium text-primary mb-2">Research & Technology Director</p>
                             <p class="text-sm">Leveraging agricultural expertiseand innovative research toadvance product quality,sustainability, and industry-leading practices in production.</p>
                         </div>
                         <div class="team-card bg-beige p-6 rounded-lg text-center">
@@ -329,7 +332,7 @@
                                     >
                             </div>
                             <h3 class="font-heading text-xl mb-1">Idris Hoppie</h3>
-                            <p class="text-sm font-medium text-primary mb-2">R&D Director</p>
+                            <p class="text-sm font-medium text-primary mb-2">Research & Innovation Director</p>
                             <p class="text-sm">Practicing sustainable agriculturalexpertise and research to enhanceproduct quality, variety and marketexpansion.</p>
                          </div>
                          <div class="team-card bg-beige p-6 rounded-lg text-center">
@@ -357,7 +360,7 @@
                         <button class="filter-btn px-4 py-2 rounded-full bg-primary text-white" data-filter="all">All</button>
                         <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300" data-filter="microgreens">Microgreens</button>
                         <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300" data-filter="flowers">Edible Flowers</button>
-                        <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300" data-filter="pumpkin">Butternut Pumpkin</button>
+                        <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300" data-filter="farmproduced">Farm Produced</button>
                     </div>
                 </div>
                 
@@ -909,13 +912,33 @@
             {
                 id: 23,
                 name: "Butternut Pumpkin",
-                category: "pumpkin",
+                category: "farmproduced",
                 description: "Sweet, nutty flavor perfect for soups, roasts and purees.",
                 images: [
                     "https://iili.io/f9QMSxn.png",
                     "https://images.pexels.com/photos/33887610/pexels-photo-33887610.jpeg"
                 ]
-            }
+            },
+            {
+                id: 24,
+                name: "Hokkaido White Sweet Corn",
+                category: "farmproduced",
+                description: "Premium Japanese white corn known for its crisp bite, pure sweetness, and juicy, tender kernels.",
+                images: [
+                    "https://iili.io/fAsJYMb.png",
+                    "https://iili.io/fAsJ1SV.png"
+                ]
+            },
+            {
+                id: 25,
+                name: "Fujisawa Melon",
+                category: "farmproduced",
+                description: "A high-grade Japanese hybrid melon prized for its rich aroma, smooth texture, and naturally sweet, flavourful flesh.",
+                images: [
+                    "https://iili.io/fAsJaPj.png",
+                    "https://iili.io/fAsJlKx.png"
+                ]
+            }  
         ];
 
         function renderProducts(filter = 'all') {
